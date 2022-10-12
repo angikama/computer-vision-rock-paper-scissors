@@ -1,8 +1,6 @@
 import random
 
 class RPS():
-    user_wins = 0
-    cpu_wins = 0
 
 # randomly choses an action for the computer      
     def get_computer_choice(computer_choice):
