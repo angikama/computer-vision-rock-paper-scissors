@@ -34,40 +34,27 @@ class RPS():
     def get_winner(self,computer_choice, user_choice):
         print()
         print(f"You chose {user_choice} and the Computer chose {computer_choice}")
-        print()
-        
 
         while True:
             if computer_choice == user_choice:
-                print ("You Draw!")
-            
-            elif computer_choice == 1:
-                if user_choice == 2:
-                    print("You win!")     
-                else:
+                    print ("You Draw!")
+            elif computer_choice == 1 and user_choice == 2:
+                    print("You win!")
+            elif computer_choice == 1 and user_choice == 3:
                     print("The computer wins!")
-                           
-            elif computer_choice == 2:
-                if user_choice == 1:
+            elif computer_choice == 2 and user_choice == 1:
                     print("The computer wins")   
-                else:
+            elif computer_choice == 2 and user_choice == 3:
                     print("You win!")
-                
-            elif computer_choice == 3:
-                if user_choice == 1:
+            elif computer_choice == 3 and user_choice == 1:
                     print("You win!")
-                    user_wins+=1
-                else:
+            elif computer_choice == 3 and user_choice == 2:
                     print("The computer wins!")
-                    
     
             play_again = input("Do you want to play again? (y/n) : ").lower()
             if play_again == "n":
                 break
-            else:
-                play()
 
-    
              
 # allows the whole game to be played
 def play():
