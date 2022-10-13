@@ -1,68 +1,43 @@
 import random
 
-class RPS():
+choices = ['Rock', 'Paper', 'Scissors ']
 
 # randomly choses an action for the computer      
-    def get_computer_choice(computer_choice):
-        computer_choice = random.randint(1,3)
-        if computer_choice == 1:
-            computer_choice = "Rock"
-        elif computer_choice == 2:
-            computer_choice = "Paper"
-        else:
-            computer_choice == 3
-            computer_choice = "Scissors"
-        return computer_choice
-        
+def get_computer_choice():
+    computer_choice = random.choice(choices)
+    return computer_choice
+    
 
 # gets input from the user using intergers
-    def get_user_choice(user_choice):
-        user_choice = input("Do you choose (Rock[1], Paper[2] or Scissors[3]?: ")
-        user_choice = int(user_choice)
-
-        if user_choice == 1:
-            user_choice = "Rock"
-        elif user_choice == 2:
-            user_choice = "Paper"
-        else:
-            user_choice == 3
-            user_choice = "Scissors"
-        return user_choice
+def get_user_choice():
+    user_choice = input("Do you choose Rock, Paper or Scissors?: ")
+    return user_choice
 
 
 # decides who wins
-    def get_winner(self,computer_choice, user_choice):
-        print()
-        print(f"You chose {user_choice} and the Computer chose {computer_choice}")
+def get_winner():
+    computer_choice = get_computer_choice()
+    user_choice = get_user_choice()
+    print()
+    print(f"You chose {user_choice} and the Computer chose {computer_choice}")
 
-        while True:
-            if computer_choice == user_choice:
-                    print ("You Draw!")
-            elif computer_choice == 1 and user_choice == 2:
-                    print("You win!")
-            elif computer_choice == 1 and user_choice == 3:
-                    print("The computer wins!")
-            elif computer_choice == 2 and user_choice == 1:
-                    print("The computer wins")   
-            elif computer_choice == 2 and user_choice == 3:
-                    print("You win!")
-            elif computer_choice == 3 and user_choice == 1:
-                    print("You win!")
-            elif computer_choice == 3 and user_choice == 2:
-                    print("The computer wins!")
+    if computer_choice == user_choice:
+            print ("You Draw!")
+    elif (computer_choice == 'Rock' and user_choice == 'Paper') or (computer_choice == 'Scissors' and user_choice == 'Rock') or (computer_choice == 'Paper' and user_choice == 'Scissors'):
+            print("You win!")
+    elif (computer_choice == 'Rock' and user_choice == 'Scissors') or (computer_choice == 'Paper' and user_choice == 'Rock') or (computer_choice == 'Scissors' and user_choice == 'Paper'):
+            print("The computer wins!")
     
-            play_again = input("Do you want to play again? (y/n) : ").lower()
-            if play_again == "n":
-                break
-
-             
+    
+def play_again():
+    get_winner()
+       
 # allows the whole game to be played
 def play():
-    game = RPS()
-    computer_choice = game.get_computer_choice()
-    user_choice = game.get_user_choice()
-    game.get_winner(computer_choice, user_choice)
+    get_winner()
+    rounds = 3
+    while rounds < 3:
+        play_again()
+        rounds+=1
 
-
-  
 play()
