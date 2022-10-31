@@ -1,74 +1,22 @@
-# Rock, Paper, Scissors Game
 import random
 
 choices = ['Rock', 'Paper', 'Scissors ']
 
 class RPS():
-    '''
-    This class represents the Rock, Paper, Scissors game
-
-    Attributes:
-    -----------
-        None
-
-    Methods:
-    ----------
-        __init__ (self)
-
-    '''
 
     def __init__(self):
-        '''
-        Class constructor for the RPS object
-
-        '''
         self.user_wins = 0
         self.computer_wins = 0 
 
     def get_computer_choice(self):
-        '''
-        Randomly selects a choice for the computer
-
-        Parameters:
-        -----------
-            None
-        
-        Returns:
-        -----------
-            computer_choice
-        '''
         computer_choice = random.choice(choices)
         return computer_choice
     
     def get_user_choice(self):
-        '''
-        Allows user to input a choice
-
-        Parameters:
-        -----------
-            None
-        
-        Returns:
-        ----------
-            user_choice
-        '''
         user_choice  = input("Do you choose Rock, Paper or Scissors?: ")
         return user_choice
     
     def get_winner(self, computer_choice, user_choice):
-        '''
-        Determines which player wins the game
-
-        Parameters:
-        ------------
-            computer_choice - randomly generated choice for computer
-            user_choice - input by user
-
-        Returns:
-        -----------
-            None
-
-        '''
         print('')
         print(f"You chose {user_choice} and the Computer chose {computer_choice}")
         print('')
@@ -85,18 +33,6 @@ class RPS():
     
 
 def play():
-    '''
-    Allows the whole game to be played
-
-    Parameters:
-    ------------
-        None
-
-    Returns:
-    -----------
-        None
-        
-    '''
     game = RPS()
     while True:
         if game.user_wins < 3 and game.computer_wins < 3:
