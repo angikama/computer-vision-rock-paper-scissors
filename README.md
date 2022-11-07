@@ -7,5 +7,5 @@
   - ipykernel
   - opencv-python
 
-- The code within manual_rps.py, codes for a simple Rock, Paper, Scissors game. The computer choses a random action from the list of actions, and the user inputs their choice. The choices are compared against the conditions listed in the function get_winner to determine a winner. The user is asked if they want to play again at the end of the game.
+The code within manual_rps.py, codes for a simple Rock, Paper, Scissors game. The computer choses a random action from the list of actions, and the user inputs their choice. The choices are compared against the conditions listed in the function get_winner to determine a winner. The user is asked if they want to play again at the end of the game.
 
